@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqmw4vpty23pi"]
+
+[ext_resource type="Script" path="res://models/knigth_buildings/Castle.gd" id="1_4ecbs"]
+[ext_resource type="Texture2D" uid="uid://duh6bxi3ngige" path="res://assets/Factions/Knights/Buildings/Castle/Castle_Blue.png" id="1_y5agb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ruh2"]
+size = Vector2(288, 198)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1sme"]
+size = Vector2(285, 111)
+
+[node name="Castle" type="StaticBody2D"]
+position = Vector2(266, 134)
+script = ExtResource("1_4ecbs")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y5agb")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(1, 16)
+shape = SubResource("RectangleShape2D_5ruh2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 58.5)
+shape = SubResource("RectangleShape2D_s1sme")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

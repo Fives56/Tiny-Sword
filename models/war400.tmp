@@ -1,0 +1,116 @@
+[gd_scene load_steps=16 format=3 uid="uid://mv2t2vfs7yaq"]
+
+[ext_resource type="Texture2D" uid="uid://llo3ya3a32op" path="res://assets/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="2_c4qn0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_psfnt"]
+radius = 40.3113
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k11v"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha3q4"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bu1m"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiyox"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdixt"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd0cf"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34kh8"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5caf"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4lvt"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyppf"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd6fv"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws5fd"]
+atlas = ExtResource("2_c4qn0")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0cmtu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k11v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha3q4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bu1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiyox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdixt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd0cf")
+}],
+"loop": true,
+"name": &"idle_knigth",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34kh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5caf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4lvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyppf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd6fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws5fd")
+}],
+"loop": true,
+"name": &"move_knigth",
+"speed": 10.0
+}]
+
+[node name="Knigth" type="CharacterBody2D"]
+position = Vector2(287, 169)
+metadata/_edit_group_ = true
+
+[node name="body" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_psfnt")
+
+[node name="knigth_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0cmtu")
+animation = &"idle_knigth"
+frame_progress = 0.0801982
