@@ -11,6 +11,10 @@ var select_draw = $SelectDraw
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT :
 		if event.pressed:
+			for unit in selected:
+				if unit.collider.is_in_group("troops"):
+					unit.collider.state["selected"] = false
+			
 			selected = []
 			dragging = true
 			drag_start = event.position
@@ -24,6 +28,10 @@ func _input(event):
 			query.set_shape(select_rectangle)
 			query.transform = Transform2D(0, (drag_end + drag_start) /2 )
 			selected = space.intersect_shape(query)
+			for unit in selected:
+				if unit.collider.is_in_group("troops"):
+					unit.collider.state["selected"] = true
+			
 			print(selected)
 	if dragging:
 		if event is InputEventMouseMotion:
