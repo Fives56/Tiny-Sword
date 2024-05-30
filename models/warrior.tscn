@@ -300,7 +300,6 @@ one_way_collision_margin = 0.0
 [node name="SelectedCircle" type="Polygon2D" parent="."]
 position = Vector2(-1, 29)
 color = Color(0, 0.537255, 1, 0.513726)
-polygon = PackedVector2Array(0, 13, 16, 15, 22, 24, 20, 42, 1, 48, -18, 39, -16, 20, -6, 15)
 script = ExtResource("2_yyqkc")
 radius = 20.0
 

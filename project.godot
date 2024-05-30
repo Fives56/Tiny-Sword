@@ -28,6 +28,10 @@ BUTTON_RIGTH={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="water"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

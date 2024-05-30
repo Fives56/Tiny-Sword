@@ -14,7 +14,6 @@ grow_vertical = 2
 
 [node name="Game" type="Node2D" parent="."]
 script = ExtResource("1_ks1sj")
-metadata/_edit_group_ = true
 
 [node name="Map" parent="Game" instance=ExtResource("1_v2auq")]
 
