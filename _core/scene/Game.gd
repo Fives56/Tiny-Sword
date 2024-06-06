@@ -5,8 +5,8 @@ var selected = []
 var drag_start = Vector2.ZERO
 var select_rectangle = RectangleShape2D.new()
 
-@onready
-var select_draw = $SelectDraw
+@onready var camera = $Camera
+@onready var select_draw = $SelectDraw
 
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT :
@@ -14,10 +14,10 @@ func _input(event):
 			select(false)
 			selected = []
 			dragging = true
-			drag_start = event.position
+			drag_start = camera.get_global_mouse_position()
 		elif dragging: 
 			dragging = false
-			var drag_end = event.position
+			var drag_end = camera.get_global_mouse_position()
 			select_draw.update_status(drag_start, drag_end, dragging)
 			select_rectangle.extents = (drag_end - drag_start) / 2 
 			var space = get_world_2d().direct_space_state
@@ -28,7 +28,8 @@ func _input(event):
 			select(true)
 	if dragging:
 		if event is InputEventMouseMotion:
-			select_draw.update_status(drag_start, event.position, dragging)
+			select_draw.update_status(drag_start, camera.get_global_mouse_position(), dragging)
+
 
 ##Se actualiza el estado de las unidades seleccionadas
 func select(state: bool):

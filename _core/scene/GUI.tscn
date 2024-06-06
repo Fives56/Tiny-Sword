@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://j4o5u1xn11nf"]
+[gd_scene load_steps=5 format=3 uid="uid://j4o5u1xn11nf"]
 
 [ext_resource type="Script" path="res://_core/scene/Game.gd" id="1_ks1sj"]
 [ext_resource type="PackedScene" uid="uid://1gw0jim8gw10" path="res://_core/scene/map.tscn" id="1_v2auq"]
 [ext_resource type="Script" path="res://_core/scene/SelectDraw.gd" id="3_ny873"]
+[ext_resource type="Script" path="res://_core/scene/Camera.gd" id="4_qgfnf"]
 
 [node name="Gui" type="Control"]
 layout_mode = 3
@@ -20,3 +21,6 @@ metadata/_edit_group_ = true
 
 [node name="SelectDraw" type="Node2D" parent="Game"]
 script = ExtResource("3_ny873")
+
+[node name="Camera" type="Camera2D" parent="Game"]
+script = ExtResource("4_qgfnf")
